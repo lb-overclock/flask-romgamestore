@@ -1,0 +1,22 @@
+{
+  "platforms": [
+    {
+      "name": "Sony PlayStation 2",
+      "identifiers": [
+        "sony_playstation2_numberssymbols",
+        "sony_playstation2_a",
+        "sony_playstation2_b",
+        "sony_playstation2_c"
+      ]
+    },
+    {
+        "name": "Sony PlayStation Portable",
+        "identifiers":[
+            "sony_playstation_portable_part1",
+            "sony_playstation_portable_part2",
+            "sony_playstation_portable_part3",
+            "sony_playstation_portable_part4"
+        ]
+    }
+  ]
+}
