@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ platform.name }} - Game List</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+    <div class="header">
+        <h1>{{ platform.name }}</h1>
+        <div>
+            <a href="{{ url_for('home') }}" class="btn home-link">Home</a>
+            <a href="{{ url_for('refresh_platform', platform_slug=platform.slug) }}" class="btn">Refresh 🔄</a>
+        </div>
+    </div>
+    
+    <table>
+        <thead>
+            <tr>
+                <th>Game Name</th>
+                <th>Size</th>
+                <th>Download Link</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for collection in platform.collections %}
+                {% for game in collection.games %}
+                <tr>
+                    <td>{{ game.name }}</td>
+                    <td>{{ game.size }}</td>
+                    <td><a href="{{ game.url }}" target="_blank">Download</a></td>
+                </tr>
+                {% endfor %}
+            {% else %}
+                <tr>
+                    <td colspan="3">No collections found for this platform.</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+</body>
+</html>

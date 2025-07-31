@@ -4,6 +4,10 @@ import internetarchive
 import json
 import sys
 
+def slugify(text):
+    """Converts a string into a URL-friendly slug. Half baked, can cause url bugs"""
+    return text.lower().replace(' ', '-')
+
 def load_platforms_from_json(filepath='platforms.json'):
     """Reads platform and identifier data from a JSON file."""
     try:

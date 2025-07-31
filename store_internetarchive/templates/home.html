@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Game Scraper - Home</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Select a Platform</h1>
+    <ul>
+        {% for platform in platforms %}
+            <li><a href="{{ url_for('show_platform', platform_slug=platform.slug) }}">{{ platform.name }}</a></li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
